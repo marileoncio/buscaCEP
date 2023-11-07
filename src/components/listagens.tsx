@@ -3,6 +3,7 @@ import React, { Component, useState, ChangeEvent, FormEvent, useEffect } from 'r
 import styles from "../App.module.css"
 import { CadastroInterface } from '../interfaces/CadastroInterface';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Listagem = () => {
     const [usuarios, setUsuarios] = useState<CadastroInterface[]>([])
@@ -102,7 +103,7 @@ const Listagem = () => {
                                             <td>{usuario.cpf}</td>
                                             <td>{usuario.email}</td>
                                             <td>
-                                                <a href="#" className='btn btn-primary btn-sm'>Editar</a>
+                                                <Link to={"/editar/"+ usuario.id} className='btn btn-primary btn-sm'>Editar</Link>
                                                 <a href="#" className='btn btn-danger btn-sm'>Excluir</a>
 
                                             </td>
